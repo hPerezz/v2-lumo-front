@@ -79,19 +79,7 @@ body {
   background-color: #252627;
 }
 
-.sidebar:hover {
-  width: 200px; /* Ajustar a largura conforme desejado */
-}
 
-.sidebar:hover a span {
-  display: inline;
-}
-
-.sidebar:hover img {
-  width: 149px;
-  content: url("img/logo_full.fw.png");
-  transition: width 0.4s;
-}
 
 .content {
   margin-left: 70px; /* Ajustar para acomodar a largura da barra lateral */
@@ -100,14 +88,6 @@ body {
   transition: margin-left 0.3s;
 }
 
-.sidebar:hover ~ .content {
-  margin-left: 200px; /* Ajustar para combinar com a largura expandida da barra lateral */
-}
-
-.sidebar:hover ~ .header {
-  width: calc(100% - 200px);
-  margin-left: 200px; /* Ajustar para combinar com a largura expandida da barra lateral */
-}
 
 .profile {
   display: flex;
