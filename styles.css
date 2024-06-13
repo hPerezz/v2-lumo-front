@@ -2,6 +2,10 @@
   font-family: "Code-Pro-LC";
   src: url("fonts/Code-Pro-LC.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Code-Pro-Light-LC";
+  src: url("fonts/Code-Pro-Light-LC.ttf") format("truetype");
+}
 
 body {
   font-family: "Code-Pro-LC", Arial, sans-serif;
@@ -9,29 +13,28 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  position: relative; /* Garante que o position absolute no .sidebar seja relativo ao body */
+  position: relative;
 }
 
 .header {
   color: #fff;
-  width: 100%-70px;
+  width: calc(100% - 70px);
   height: 66px;
-  margin-left: 70px; /* Ajustar para acomodar a largura da barra lateral */
+  margin-left: 70px;
   background-color: #18191b;
-  position: relative; /* Garante que o z-index funcione */
-  margin-left: 70px; /* Ajustar para acomodar a largura da barra lateral */
+  position: relative;
   padding: 20px;
   flex: 1;
   transition: margin-left 0.3s;
-  z-index: 2; /* z-index menor que o da sidebar */
+  z-index: 2;
 }
 
 .sidebar {
-  z-index: 3; /* z-index maior que o do header para ficar acima */
+  z-index: 5;
   width: 70px;
-  height: calc(100vh);
+  height: 100vh;
   position: fixed;
-  top: 0; /* Ajustado para começar do topo */
+  top: 0;
   left: 0;
   background-color: #18191b;
   display: flex;
@@ -50,8 +53,9 @@ body {
   color: white;
   text-decoration: none;
   padding-left: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   transition: background-color 0.3s;
+  position: relative;
 }
 
 .sidebar a.active {
@@ -65,8 +69,9 @@ body {
 }
 
 .sidebar a i {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 100;
+  margin-top: 5px;
   margin-right: 20px;
 }
 
@@ -79,15 +84,59 @@ body {
   background-color: #252627;
 }
 
-
-
 .content {
-  margin-left: 70px; /* Ajustar para acomodar a largura da barra lateral */
+  margin-left: 70px;
   padding: 20px;
   flex: 1;
   transition: margin-left 0.3s;
 }
 
+.submenu {
+  background-color: #252627;
+  z-index: 2;
+  color: white;
+  padding-top: 70px;
+  width: 200px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 70px;
+}
+.submenu .title {
+  font-family: "Code-Pro-LC", Arial, sans-serif;
+  font-size: 22px;
+  padding-left: 20px;
+  padding-top: 30px;
+  margin-bottom: 10px;
+}
+.submenu .underline {
+  height: 1px;
+  margin-left: 20px;
+  width: 80%;
+  background-color: #fff;
+}
+
+.submenu .item {
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  padding: 9px;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  font-size: 15px;
+}
+
+.submenu a {
+  text-decoration: none;
+}
+.submenu .item:hover {
+  background-color: #18191b;
+  border-radius: 6px;
+}
+.submenu .item.active {
+  background-color: #555555;
+  border-radius: 6px;
+}
 
 .profile {
   display: flex;
