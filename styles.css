@@ -124,8 +124,8 @@ body {
 }
 
 .content {
-  margin-left: 70px;
-  padding: 20px;
+  margin-left: 70px !important; 
+  padding-left: 70px;
   flex: 1;
 }
 
@@ -183,7 +183,8 @@ body {
 /* Media query for mobile view */
 @media (max-width: 768px) {
   .content {
-    margin-left: 400px;
+    margin: 0px;
+    margin-left: 10px !important;
     margin-bottom: 70px; /* Adjust for the sidebar height */
   }
   .lumo-icon {
@@ -207,8 +208,7 @@ body {
   }
 
   .header {
-    margin-left: 0;
-    width: 100%;
+    display: none;
   }
 
   .submenu {
