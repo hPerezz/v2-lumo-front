@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lumo</title>
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumo</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .submenu {
+      background-color: #252627;
+      z-index: 2;
+      color: white;
+      padding-top: 70px;
+      width: 200px;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 70px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .submenu.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .content {
+      margin-left: 70px;
+      padding: 20px;
+      flex: 1;
+      transition: margin-left 0.3s;
+    }
+
+    .content.shifted {
+      margin-left: 270px;
+    }
+
+    @media (max-width: 768px) {
       .submenu {
-        background-color: #252627;
-        z-index: 2;
-        color: white;
-        padding-top: 70px;
-        width: 200px;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        left: 70px;
+        padding-top: 0;
+        height: auto;
+        width: 100%;
+        left: 0;
+        top: auto;
+        bottom: 70px; /* Adjust for the sidebar height */
+        position: fixed;
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s, visibility 0.3s;
@@ -35,147 +59,203 @@
       }
 
       .content {
-        margin-left: 70px;
-        padding: 20px;
-        flex: 1;
-        transition: margin-left 0.3s;
+        margin-left: 0 !important;
+        padding: 0 !important;
+        margin-bottom: 70px; /* Adjust for the sidebar height */
       }
 
       .content.shifted {
-        margin-left: 270px;
+        margin-bottom: 270px; /* Adjust for the sidebar height + submenu height */
       }
-    </style>
-  </head>
-  <body>
-    <div class="sidebar">
-      <div class="lumo-icon">
-        <img src="img/footer_icon.png" height="36px" alt="icon" />
+
+      .sidebar {
+        width: 100%;
+        height: 70px;
+        flex-direction: row;
+        bottom: 0;
+        top: auto;
+        padding-top: 0;
+        justify-content: space-around;
+      }
+
+      .sidebar a {
+        height: 70px;
+        margin-bottom: 0;
+        width: 70px;
+        justify-content: center;
+      }
+
+      .header {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="lumo-icon">
+      <img src="img/footer_icon.png" height="36px" alt="icon" />
+    </div>
+    <a href="#home" class="active">
+      <i class="bi bi-house"></i>
+      <span>Inicio</span>
+    </a>
+    <a href="#reports" id="report" class="menu-item">
+      <i class="bi bi-clipboard-data"></i>
+      <span>Relatórios</span>
+    </a>
+    <a href="#usines" id="usines" class="menu-item">
+      <i class="bi bi-sun"></i>
+      <span>Usinas</span>
+    </a>
+    <a href="#lumobots" id="lumobots" class="menu-item">
+      <i class="bi bi-robot"></i>
+      <span>Lumobots</span>
+    </a>
+    <a href="#team" id="team" class="menu-item">
+      <i class="bi bi-people"></i>
+      <span>Equipe</span>
+    </a>
+    <a href="#myaccount" id="myaccount" class="menu-item">
+      <i class="bi bi-person-circle"></i>
+      <span>Minha Conta</span>
+    </a>
+  </div>
+
+  <div class="submenu" id="sub-reports">
+    <div class="title">Relatórios</div>
+    <div class="underline"></div>
+    <div class="item active">Resumo Geral</div>
+    <a href="#">
+      <div class="item">Pesquisa avançada</div>
+    </a>
+    <a href="#">
+      <div class="item">Histórico de dados</div>
+    </a>
+  </div>
+
+  <div class="submenu" id="sub-usines">
+    <div class="title">Usinas</div>
+    <div class="underline"></div>
+    <div class="item">Visão Geral</div>
+    <a href="#">
+      <div class="item">Análise Detalhada</div>
+    </a>
+  </div>
+
+  <div class="submenu" id="sub-lumobots">
+    <div class="title">Lumobots</div>
+    <div class="underline"></div>
+    <div class="item">Resumo</div>
+    <a href="#">
+      <div class="item">Configurações</div>
+    </a>
+  </div>
+
+  <div class="submenu" id="sub-team">
+    <div class="title">Equipe</div>
+    <div class="underline"></div>
+    <div class="item">Membros</div>
+    <a href="#">
+      <div class="item">Projetos</div>
+    </a>
+  </div>
+
+  <div class="submenu" id="sub-myaccount">
+    <div class="title">Minha Conta</div>
+    <div class="underline"></div>
+    <div class="item">Perfil</div>
+    <a href="#">
+      <div class="item">Configurações</div>
+    </a>
+  </div>
+
+  <div class="header">
+    <div class="left profile">
+      <img src="img/renatito.jpg" alt="Avatar" class="avatar" />
+      <span class="username">Olá, Renato</span>
+    </div>
+    <div class="right">
+      <div class="help">
+        <i class="bi bi-question-circle"></i>
+        Ajuda
       </div>
-      <a href="#home" class="active">
-        <i class="bi bi-house"></i>
-        <span>Inicio</span>
-      </a>
-      <a href="#reports" id="report" class="menu-item">
-        <i class="bi bi-clipboard-data"></i>
-        <span>Relatórios</span>
-      </a>
-      <a href="#usines" id="usines" class="menu-item">
-        <i class="bi bi-sun"></i>
-        <span>Usinas</span>
-      </a>
-      <a href="#lumobots" id="lumobots" class="menu-item">
-        <i class="bi bi-robot"></i>
-        <span>Lumobots</span>
-      </a>
-      <a href="#team" id="team" class="menu-item">
-        <i class="bi bi-people"></i>
-        <span>Equipe</span>
-      </a>
-      <a href="#myaccount" id="myaccount" class="menu-item">
-        <i class="bi bi-person-circle"></i>
-        <span>Minha Conta</span>
-      </a>
+      <div class="logout">Sair</div>
     </div>
+  </div>
 
-    <div class="submenu" id="sub-reports">
-      <div class="title">Relatórios</div>
-      <div class="underline"></div>
-      <div class="item active">Resumo Geral</div>
-      <a href="#">
-        <div class="item">Pesquisa avançada</div>
-      </a>
-      <a href="#">
-        <div class="item">Histórico de dados</div>
-      </a>
-    </div>
+  <div class="content" id="content">
+    <h1>Dashboard Lumo</h1>
+    <p>O que temos para hoje?</p>
+  </div>
 
-    <div class="submenu" id="sub-usines">
-      <div class="title">Usinas</div>
-      <div class="underline"></div>
-      <div class="item">Visão Geral</div>
-      <a href="#">
-        <div class="item">Análise Detalhada</div>
-      </a>
-    </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var menuItems = [
+        { id: "report", submenuId: "sub-reports" },
+        { id: "usines", submenuId: "sub-usines" },
+        { id: "lumobots", submenuId: "sub-lumobots" },
+        { id: "team", submenuId: "sub-team" },
+        { id: "myaccount", submenuId: "sub-myaccount" },
+      ];
 
-    <div class="submenu" id="sub-lumobots">
-      <div class="title">Lumobots</div>
-      <div class="underline"></div>
-      <div class="item">Resumo</div>
-      <a href="#">
-        <div class="item">Configurações</div>
-      </a>
-    </div>
+      function isMobileView() {
+        return window.innerWidth <= 768;
+      }
 
-    <div class="submenu" id="sub-team">
-      <div class="title">Equipe</div>
-      <div class="underline"></div>
-      <div class="item">Membros</div>
-      <a href="#">
-        <div class="item">Projetos</div>
-      </a>
-    </div>
+      menuItems.forEach(function (item) {
+        var menuItem = document.getElementById(item.id);
+        var submenu = document.getElementById(item.submenuId);
+        var content = document.getElementById('content');
 
-    <div class="submenu" id="sub-myaccount">
-      <div class="title">Minha Conta</div>
-      <div class="underline"></div>
-      <div class="item">Perfil</div>
-      <a href="#">
-        <div class="item">Configurações</div>
-      </a>
-    </div>
+        function showSubmenu() {
+          submenu.classList.add("visible");
+          content.classList.add("shifted");
+        }
 
-    <div class="header">
-      <div class="left profile">
-        <img src="img/renatito.jpg" alt="Avatar" class="avatar" />
-        <span class="username">Olá, Renato</span>
-      </div>
-    </div>
+        function hideSubmenu() {
+          submenu.classList.remove("visible");
+          content.classList.remove("shifted");
+        }
 
-    <div class="content" id="content">
-      <h1>Dashboard Lumo</h1>
-      <p>O que temos para hoje?</p>
-    </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var menuItems = [
-          { id: "report", submenuId: "sub-reports" },
-          { id: "usines", submenuId: "sub-usines" },
-          { id: "lumobots", submenuId: "sub-lumobots" },
-          { id: "team", submenuId: "sub-team" },
-          { id: "myaccount", submenuId: "sub-myaccount" },
-        ];
-
-        menuItems.forEach(function(item) {
-          var menuItem = document.getElementById(item.id);
-          var submenu = document.getElementById(item.submenuId);
-
-          function showSubmenu() {
-            submenu.classList.add("visible");
-            content.classList.add("shifted");
-          }
-
-          function hideSubmenu() {
-            submenu.classList.remove("visible");
-            content.classList.remove("shifted");
-          }
-
+        if (!isMobileView()) {
           menuItem.addEventListener("mouseover", showSubmenu);
-          menuItem.addEventListener("mouseout", function() {
+          menuItem.addEventListener("mouseout", function () {
             if (!submenu.matches(":hover")) {
               hideSubmenu();
             }
           });
 
           submenu.addEventListener("mouseover", showSubmenu);
-          submenu.addEventListener("mouseout", function() {
+          submenu.addEventListener("mouseout", function () {
             if (!menuItem.matches(":hover")) {
               hideSubmenu();
             }
           });
+        }
+
+        menuItem.addEventListener("click", function () {
+          if (isMobileView()) {
+            if (submenu.classList.contains("visible")) {
+              hideSubmenu();
+            } else {
+              showSubmenu();
+            }
+          }
         });
       });
-    </script>
-  </body>
+
+      window.addEventListener('resize', function() {
+        if (!isMobileView()) {
+          // Ensure all submenus are hidden when switching from mobile to desktop
+          document.querySelectorAll('.submenu').forEach(function(submenu) {
+            submenu.classList.remove('visible');
+          });
+          document.getElementById('content').classList.remove('shifted');
+        }
+      });
+    });
+  </script>
+</body>
 </html>
