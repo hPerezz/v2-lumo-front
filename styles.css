@@ -88,12 +88,19 @@ body {
   padding: 20px;
   justify-content: space-between;
   flex: 1;
+  text-decoration: none;
   display: flex;
   transition: margin-left 0.3s;
   z-index: 2;
 }
+.header a {
+  font-weight: bold;
+  color: inherit; /* This ensures the link color remains unchanged */
+  text-decoration: inherit; /* This ensures the underline style remains unchanged */
+}
 
 .header .right {
+  text-decoration: none;
   display: flex;
   justify-content: flex-end;
 }
@@ -266,7 +273,10 @@ height: 200px;
 }
 
 .card .text {
-  display: none;
+  width: 67vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* display: none; */
 }
   .content {
     margin: 0px;
