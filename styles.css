@@ -37,10 +37,10 @@ body {
 
 .card:hover {
   color: white;
-
+  background-color: #18191b;
   /* box-shadow: 9px 9px #18191b; */
-  width: 406px;
-  height: 256px;
+  /* width: 406px;
+  height: 256px; */
 }
 
 .card .icon-space {
@@ -61,6 +61,7 @@ body {
 }
 
 .card .text {
+  display: inline;
   font-size: 14px;
   text-decoration: none; /* Ensure no underline for links in the text */
 }
@@ -254,14 +255,19 @@ body {
 .flexcontent {
   justify-content: center;
 }
-/* .card {
-  width: 40vw;
+.card {
+  width: 66vw;
+height: 200px;
 }
 
 .card:hover {
-  width: 41vw;
+  width: 71vw;
   height: 250px;
-} */
+}
+
+.card .text {
+  display: none;
+}
   .content {
     margin: 0px;
     margin-left: 10px !important;
