@@ -14,6 +14,67 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  text-decoration: none;
+}
+
+.card {
+  width: 400px;
+  padding: 35px;
+  height: 250px;
+  margin: 26px;
+  padding-top: 20px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-left: 0px;
+  color: rgb(231, 231, 231);
+  background-color: #353535;
+  border-radius: 15px;
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.card:hover {
+  color: white;
+
+  /* box-shadow: 9px 9px #18191b; */
+  width: 406px;
+  height: 256px;
+}
+
+.card .icon-space {
+  flex: 0 0 0px;
+  display: inline;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .icon-space .icon {
+  width: 60px;
+  height: 60px;
+}
+
+.card .title {
+  font-size: 25px;
+  text-decoration: none; /* Ensure no underline for links in the title */
+}
+
+.card .text {
+  font-size: 14px;
+  text-decoration: none; /* Ensure no underline for links in the text */
+}
+
+.flexcontent a {
+  text-decoration: none; /* No underline for links in .card */
+  color: inherit; /* Ensure link color inherits the parent's color */
+}
+
+.flexcontent a:hover,
+.flexcontent a:focus,
+.flexcontent a:active {
+  text-decoration: none; /* No underline on hover, focus, and active states */
+  color: inherit; /* Ensure link color remains unchanged on hover, focus, and active states */
 }
 
 .header {
@@ -41,7 +102,7 @@ body {
   margin-right: 2vw;
 }
 
-.header .right .help i {
+.header .right .help I {
   margin-right: 5px;
 }
 
@@ -107,7 +168,7 @@ body {
   margin: 0px 12px 25px 10px;
 }
 
-.sidebar a i {
+.sidebar a I {
   font-size: 30px;
   font-weight: 100;
   margin-top: 5px;
@@ -124,9 +185,16 @@ body {
 }
 
 .content {
-  margin-left: 70px !important; 
+  margin-left: 70px !important;
   padding-left: 70px;
   flex: 1;
+}
+
+.flexcontent {
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .submenu {
@@ -182,11 +250,24 @@ body {
 
 /* Media query for mobile view */
 @media (max-width: 768px) {
+  
+.flexcontent {
+  justify-content: center;
+}
+/* .card {
+  width: 40vw;
+}
+
+.card:hover {
+  width: 41vw;
+  height: 250px;
+} */
   .content {
     margin: 0px;
     margin-left: 10px !important;
     margin-bottom: 70px; /* Adjust for the sidebar height */
   }
+
   .lumo-icon {
     display: none;
   }
