@@ -14,26 +14,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <style>
-      .submenu {
-        background-color: #252627;
-        z-index: 2;
-        color: white;
-        padding-top: 70px;
-        width: 200px;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        left: 70px;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s, visibility 0.3s;
-      }
-
-      .submenu.visible {
-        opacity: 1;
-        visibility: visible;
-      }
-
+      /* DONT remove it.  */
       .content {
         margin-left: 70px;
         padding: 20px;
@@ -43,47 +24,6 @@
 
       .content.shifted {
         margin-left: 270px;
-      }
-
-      .card {
-        text-decoration: none !important;
-      }
-
-      @media (max-width: 768px) {
-        .submenu {
-          display: none;
-        }
-
-        .submenu.visible {
-          opacity: 1;
-          visibility: visible;
-        }
-
-        .content.shifted {
-          margin-bottom: 270px; /* Adjust for the sidebar height + submenu height */
-        }
-
-        .sidebar {
-          width: 100%;
-          height: 70px;
-          flex-direction: row;
-          bottom: 0;
-          top: auto;
-          padding-top: 0;
-          justify-content: space-around;
-        }
-
-        .sidebar a {
-          height: 70px;
-          margin-bottom: 0;
-          width: 70px;
-          justify-content: center;
-        }
-
-        .header {
-          margin-left: 0;
-          width: 100%;
-        }
       }
     </style>
   </head>
@@ -117,6 +57,8 @@
         <span>Minha Conta</span>
       </a>
     </div>
+
+    <!-- menu session -->
 
     <div class="submenu" id="sub-reports">
       <div class="title">Relatórios</div>
@@ -165,7 +107,9 @@
         <div class="item">Configurações</div>
       </a>
     </div>
+    <!-- menu session -->
 
+    <!-- header session -->
     <div class="header">
       <div class="left profile">
         <img src="img/renatito.jpg" alt="Avatar" class="avatar" />
@@ -183,12 +127,14 @@
         </div>
       </div>
     </div>
+    <!-- header session -->
 
+    <!-- real content -->
     <div class="content" id="content">
       <h1>Dashboard Lumo</h1>
       <p>O que temos para hoje?</p>
       <div class="flexcontent">
-        <!-- Card 1 -->
+        <!-- Cards -->
         <a href src="#">
           <div class="card">
             <div class="icon-space">
@@ -200,7 +146,7 @@
             </p>
           </div>
         </a>
-        <!-- Card 1 -->
+        <!-- Cards -->
         <a href src="#">
           <div class="card">
             <div class="icon-space">
@@ -212,7 +158,7 @@
             </p>
           </div>
         </a>
-        <!-- Card 1 -->
+        <!-- Cards -->
         <a href src="#">
           <div class="card">
             <div class="icon-space">
@@ -225,7 +171,7 @@
             </p>
           </div>
         </a>
-        <!-- Card 1 -->
+        <!-- Cards -->
         <a href src="#">
           <div class="card">
             <div class="icon-space">
@@ -240,6 +186,7 @@
         </a>
       </div>
     </div>
+    <!-- real content -->
 
     <script src="js/menu.js"></script>
   </body>

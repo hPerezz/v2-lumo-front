@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login-styles.css" />
+  </head>
+  <body>
+    
+    <div class="container" id="container">
+      <div class="background-gradient" id="background-gradient">
+        <div id="wrap">
+        <div class="logo"><img src="img/logo_login_page.png" width="180px" /></div>
+          <div class="pretitle">Bem-vindo ao</div>
+          <div class="title" id="title">Dashboard Lumo</div>
+        </div>
+      </div>
+      <div class="login-form">
+        <form>
+          <div class="content">
+            <div class="login-title-container">
+              <div>Fazer Login</div>
+              <img src="img/footer_icon.png" />
+            </div>
+            <!-- <div class="error">Email ou senha inválido</div> -->
+            <div class="form-group">
+              <label for="username">Email</label>
+              <input type="text" id="username" name="username" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Senha</label>
+              <input type="password" id="password" name="password" required />
+            </div>
+            <div class="form-divided">
+              <div>
+                <a href="#"> Esqueci minha senha </a>
+              </div>
+              <div><button type="submit">Entrar</button></div>
+            </div>
+            <br />
+          </div>
+        </form>
+        <div class="help">
+          Precisa de ajuda?
+          <a href="#help">Clique aqui.</a>
+        </div>
+      </div>
+    </div>
+    <script>
+
+      
+
+// init
+var maxx = document.body.clientWidth;
+var maxy = document.body.clientHeight;
+var halfx = maxx / 2;
+var halfy = maxy / 2;
+var canvas = document.createElement("canvas");
+document.body.appendChild(canvas);
+canvas.width = maxx;
+canvas.height = maxy;
+var context = canvas.getContext("2d");
+var dotCount = 200;
+var dots = [];
+// create dots
+for (var i = 0; i < dotCount; i++) {
+  dots.push(new dot());
+}
+
+// dots animation
+function render() {
+  context.fillStyle = "#000000";
+  context.fillRect(0, 0, maxx, maxy);
+  for (var i = 0; i < dotCount; i++) {
+    dots[i].draw();
+    dots[i].move();
+  }
+  requestAnimationFrame(render);
+}
+
+// dots class
+// @constructor
+function dot() {
+  
+  this.rad_x = 2 * Math.random() * halfx + 1;
+  this.rad_y = 1.2 * Math.random() * halfy + 1;
+  this.alpha = Math.random() * 360 + 1;
+  this.speed = Math.random() * 100 < 50 ? 1 : -1;
+  this.speed *= 0.1;
+  this.size = Math.random() * 5 + 1;
+  this.color = Math.floor(Math.random() * 256);
+  
+}
+
+// drawing dot
+dot.prototype.draw = function() {
+  
+  // calc polar coord to decart
+  var dx = halfx + this.rad_x * Math.cos(this.alpha / 180 * Math.PI);
+  var dy = halfy + this.rad_y * Math.sin(this.alpha / 180 * Math.PI);
+  // set color
+  context.fillStyle = "rgb(" + this.color + "," + this.color + "," + this.color + ")";
+  // draw dot
+  context.fillRect(dx, dy, this.size, this.size);
+  
+};
+
+// calc new position in polar coord
+dot.prototype.move = function() {
+  
+  this.alpha += this.speed;
+  // change color
+  if (Math.random() * 100 < 50) {
+    this.color += 1;
+  } else {
+    this.color -= 1;
+  }
+  
+};
+
+// start animation
+render();
+
+// start animation
+render();
+      let constrain = 1000;
+      let mouseOverContainer = document.getElementById("container");
+      let ex1Layer = document.getElementById("wrap");
+
+      function transforms(x, y, el) {
+        let box = el.getBoundingClientRect();
+        let calcX = -(y - box.y - box.height / 2) / constrain;
+        let calcY = (x - box.x - box.width / 2) / constrain;
+
+        return (
+          "perspective(100px) " +
+          "   rotateX(" +
+          calcX +
+          "deg) " +
+          "   rotateY(" +
+          calcY +
+          "deg) "
+        );
+      }
+
+      function transformElement(el, xyEl) {
+        el.style.transform = transforms.apply(null, xyEl);
+      }
+
+      mouseOverContainer.onmousemove = function (e) {
+        let xy = [e.clientX, e.clientY];
+        let position = xy.concat([ex1Layer]);
+
+        window.requestAnimationFrame(function () {
+          transformElement(ex1Layer, position);
+        });
+      };
+    </script>
+  </body>
+</html>
