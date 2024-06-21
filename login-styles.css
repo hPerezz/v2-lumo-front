@@ -1,173 +1,229 @@
 @font-face {
-    font-family: "Code-Pro-LC";
-    src: url("fonts/Code-Pro-LC.ttf") format("truetype");
-  }
-  @font-face {
-    font-family: "Code-Pro-Light-LC";
-    src: url("fonts/Code-Pro-Light-LC.ttf") format("truetype");
-  }
-  
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: "Code-Pro-LC";
+  src: url("fonts/Code-Pro-LC.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Code-Pro-Light-LC";
+  src: url("fonts/Code-Pro-Light-LC.ttf") format("truetype");
 }
 
-body, html {
-    height: 100%;
-    font-family: "Code-Pro-LC", Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Code-Pro-LC", Arial, sans-serif;
 }
 
 a {
-    color: black;
+  color: black;
 }
 
-
 .container {
-    display: flex;
-    height: 100%;
+  display: flex;
+  height: 100%;
 }
 
 .background-gradient {
-    padding-left: 7vw;
-    display: flex;
-    flex-direction: column;
-    width: 60vw;
-    background-color: #0c0d0e;
-    background-image: url('img/gradient-login-page.png'); /* substitua pelo caminho da sua imagem */
-    background-size: cover;
-    background-position: center; 
-    /* background: rgb(24,25,27);
+  padding-left: 7vw;
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  background-color: #0c0d0e;
+  background-image: url("img/gradient-login-page.png"); /* substitua pelo caminho da sua imagem */
+  background-size: cover;
+  background-position: center;
+  /* background: rgb(24,25,27);
     background: linear-gradient(186deg, rgba(24,25,27,1) 0%, rgba(24,25,27,1) 54%, rgba(58,60,64,1) 66%, rgba(24,25,27,1) 79%, rgba(46,48,51,1) 85%); */
-    color: white;
+  color: white;
 }
 
 .form-divided {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .background-gradient .logo {
-    margin-top: 10vh;
+  margin-top: 10vh;
 }
 
 .background-gradient .pretitle {
-    margin-top: 25vh;
-    font-size: 36px;
+  margin-top: 25vh;
+  font-size: 36px;
 }
 
 .background-gradient .title {
-    margin-top: 1vh;
-    font-size: 60px;
+  margin-top: 1vh;
+  font-size: 60px;
 }
+.login-form .cellphone-logo {
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: left;
+    justify-self: left;
+    justify-content: left;
+    display: none;
+}
+
 .login-form {
-    width: 40vw;
-    display: flex;
-    align-items: center;
-    background-color: white;
-    padding: 6vw;
-
+  width: 40vw;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 6vw;
 }
 
-.login-form h1{
-    margin-bottom: 4vh;
+.login-form h1 {
+  margin-bottom: 4vh;
 }
 
 .login-form .content {
-    text-align: left;
+  text-align: left;
+  margin: 0;
 }
 form {
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
 }
 
 h2 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .form-group {
-    margin-bottom: 3vh;
-    text-align: left;
+  margin-bottom: 3vh;
+  text-align: left;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .login-title-container {
-    justify-content: space-between;
-    display: flex;
-    font-size: 30px;
+  justify-content: space-between;
+  display: flex;
+  font-size: 30px;
 }
-.login-title-container img{
-    filter: invert(1);
-    width: 50px;
-    margin-bottom: 40px;
+.login-title-container img {
+  filter: invert(1);
+  width: 50px;
+  margin-bottom: 40px;
 }
 
 .error {
-    padding: 10px;
-    margin-bottom: 40px;
-    color: #542121;
-    background-color: #f3cfcf;
-    border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 35px;
+  color: #542121;
+  border: solid 1px #ad7a7a;
+  background-color: #f3cfcf;
+  font-size: 15px;
+
+  border-radius: 5px;
+}
+
+
+.warning {
+  padding: 10px;
+  font-size: 15px;
+  margin-bottom: 35px;
+  color: #7d650f;
+  border: 1px solid #b9aa75;
+  background-color: #f0dcb8;
+  border-radius: 5px;
 }
 .celphone-title {
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 28px;
-    display: none;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 28px;
+  display: none;
 }
 input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 button {
-    font-size: 18px;
-    padding: 10px 20px;
-    width: 180px;
-    border: none;
-    background-color: #18191B;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
+  font-size: 18px;
+  padding: 10px 20px;
+  width: 180px;
+  border: none;
+  background-color: #18191b;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: black;
+  background-color: black;
 }
 
 .help {
-    position: fixed;
-    right: 0;
-    bottom: 20px;
-    margin-right: 20px;
-    color:#18191B;
+  position: fixed;
+  right: 0;
+  bottom: 20px;
+  margin-right: 20px;
+  color: #18191b;
 }
 
-@media (max-width: 768px) {
-    .celphone-title{
-        display: inline;
-    }
-    .background-gradient {
-        display: none;
-    }
+@media (max-width: 1000px) {
+  .celphone-title {
+    display: inline;
+  }
+  .forgot {
+    margin-top: 30px;
+  }
+  .submit {
+    width: 100%;
+  }
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-divided {
+    flex-wrap: wrap-reverse;
+  }
 
-    .login-form {
-        width: 100%;
-    }
+  button {
+    width: 100%;
+  }
+  .login-form .content {
+    background-color: white;
+    border-radius: 5px;
+    border: white 30px solid;
+  }
+  .login-title-container {
+    font-size: 20px;
+  }
+  .help {
+    color: white;
+  }
+  .help a {
+    color: white;
+  }
+  .background-gradient {
+    display: none;
+  }
 
-    .login-form {
-        align-items: center;
-        justify-content: center;
-    }
+  .login-form {
+    width: 100%;
+  }
+  .login-form .cellphone-logo {
+    display: flex;
+}
+  .login-form {
+    background-color: #0c0d0e;
+    background-image: url("img/gradient-login-page.png"); /* substitua pelo caminho da sua imagem */
+    align-items: center;
+    justify-content: center;
+  }
 }
