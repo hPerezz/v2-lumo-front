@@ -3,191 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lumo</title>
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      /* DONT remove it.  */
-      .content {
-        margin-left: 70px;
-        padding: 20px;
-        flex: 1;
-        transition: margin-left 0.3s;
-      }
-
-      .content.shifted {
-        margin-left: 270px;
-      }
-    </style>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login-styles.css" />
   </head>
   <body>
-    <div class="sidebar">
-      <div class="lumo-icon">
-        <img src="img/footer_icon.png" height="36px" alt="icon" />
+    
+    <div class="container" id="container">
+        
+      <div class="background-gradient" id="background-gradient">
+        <div id="wrap">
+          <div class="logo">
+            <img src="img/logo_login_page.png" width="180px" />
+          </div>
+          <div class="pretitle">Bem-vindo ao</div>
+          <div class="title" id="title">Dashboard Lumo</div>
+        </div>
       </div>
-      <a href="#home" class="active">
-        <i class="bi bi-house"></i>
-        <span>Inicio</span>
-      </a>
-      <a href="#reports" id="report" class="menu-item">
-        <i class="bi bi-clipboard-data"></i>
-        <span>Relatórios</span>
-      </a>
-      <a href="#usines" id="usines" class="menu-item">
-        <i class="bi bi-sun"></i>
-        <span>Usinas</span>
-      </a>
-      <a href="#lumobots" id="lumobots" class="menu-item">
-        <i class="bi bi-robot"></i>
-        <span>Lumobots</span>
-      </a>
-      <a href="#team" id="team" class="menu-item">
-        <i class="bi bi-people"></i>
-        <span>Equipe</span>
-      </a>
-      <a href="#myaccount" id="myaccount" class="menu-item">
-        <i class="bi bi-person-circle"></i>
-        <span>Minha Conta</span>
-      </a>
-    </div>
-
-    <!-- menu session -->
-
-    <div class="submenu" id="sub-reports">
-      <div class="title">Relatórios</div>
-      <div class="underline"></div>
-      <div class="item active">Resumo Geral</div>
-      <a href="#">
-        <div class="item">Pesquisa avançada</div>
-      </a>
-      <a href="#">
-        <div class="item">Histórico de dados</div>
-      </a>
-    </div>
-
-    <div class="submenu" id="sub-usines">
-      <div class="title">Usinas</div>
-      <div class="underline"></div>
-      <div class="item">Visão Geral</div>
-      <a href="#">
-        <div class="item">Análise Detalhada</div>
-      </a>
-    </div>
-
-    <div class="submenu" id="sub-lumobots">
-      <div class="title">Lumobots</div>
-      <div class="underline"></div>
-      <div class="item">Resumo</div>
-      <a href="#">
-        <div class="item">Configurações</div>
-      </a>
-    </div>
-
-    <div class="submenu" id="sub-team">
-      <div class="title">Equipe</div>
-      <div class="underline"></div>
-      <div class="item">Membros</div>
-      <a href="#">
-        <div class="item">Projetos</div>
-      </a>
-    </div>
-
-    <div class="submenu" id="sub-myaccount">
-      <div class="title">Minha Conta</div>
-      <div class="underline"></div>
-      <div class="item">Perfil</div>
-      <a href="#">
-        <div class="item">Configurações</div>
-      </a>
-    </div>
-    <!-- menu session -->
-
-    <!-- header session -->
-    <div class="header">
-      <div class="left profile">
-        <img src="img/renatito.jpg" alt="Avatar" class="avatar" />
-        <span class="username">Olá, Renato</span>
-      </div>
-      <div class="right">
+      <div class="login-form">
+        <form method="post" action="dashboard.html">
+          <div class="cellphone-logo">
+            <img src="img/logo_login_page.png" width="180px">
+          </div>
+          <div class="content">
+            <div class="login-title-container">
+              <h2>Fazer Login</h2>
+            </div>
+            <!-- <div class="error">❌ Email ou senha inválidos</div> -->
+            <!-- <div class="warning">💡 Entre na sua conta novamente</div> -->
+            <div class="form-group">
+              <label for="username">Email</label>
+              <input type="text" id="username" name="username" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Senha</label>
+              <input type="password" id="password" name="password" required />
+            </div>
+            <div class="form-divided">
+              <div class="forgot">
+                <a href="#"> Esqueci minha senha </a>
+              </div>
+              <div class="submit"><button type="submit">Entrar</button></div>
+            </div>
+            <br />
+          </div>
+        </form>
         <div class="help">
-          <a href="#">
-            <i class="bi bi-question-circle"></i>
-            Ajuda
-          </a>
-        </div>
-        <div class="logout">
-          <a href="#logout"> Sair </a>
+          Precisa de ajuda?
+          <a href="#help">Clique aqui.</a>
         </div>
       </div>
     </div>
-    <!-- header session -->
+    <script>
+        
+      let constrain = 1000;
+      let mouseOverContainer = document.getElementById("container");
+      let ex1Layer = document.getElementById("wrap");
 
-    <!-- real content -->
-    <div class="content" id="content">
-      <h1>Dashboard Lumo</h1>
-      <p>O que temos para hoje?</p>
-      <div class="flexcontent">
-        <!-- Cards -->
-        <a href src="#">
-          <div class="card">
-            <div class="icon-space">
-              <i class="bi bi-file-bar-graph icon" style="font-size: 58px"></i>
-            </div>
-            <h2 class="title">Gerar relatórios</h2>
-            <p class="text">
-              Analise em detalhes o desempenho da sua equipe em campo.
-            </p>
-          </div>
-        </a>
-        <!-- Cards -->
-        <a href src="#">
-          <div class="card">
-            <div class="icon-space">
-              <i class="bi bi-sun icon" style="font-size: 58px"></i>
-            </div>
-            <h2 class="title">Gerenciar Usinas</h2>
-            <p class="text">
-              Adicione, edite e categorize usinas solares sob gestão.
-            </p>
-          </div>
-        </a>
-        <!-- Cards -->
-        <a href src="#">
-          <div class="card">
-            <div class="icon-space">
-              <i class="bi bi-robot icon" style="font-size: 58px"></i>
-            </div>
-            <h2 class="title">Gerenciar Lumobots</h2>
-            <p class="text">
-              Visualize informações dos seus Lumobots, abra chamados de
-              manutenção, renove seus alugueis e garanta sua operação.
-            </p>
-          </div>
-        </a>
-        <!-- Cards -->
-        <a href src="#">
-          <div class="card">
-            <div class="icon-space">
-              <i class="bi bi-people icon" style="font-size: 58px"></i>
-            </div>
-            <h2 class="title">Gerenciar Equipe</h2>
-            <p class="text">
-              Crie equipes de manutenção, administre permissões, atribua cargos
-              e organize a sua equipe de forma eficaz.
-            </p>
-          </div>
-        </a>
-      </div>
-    </div>
-    <!-- real content -->
+      function transforms(x, y, el) {
+        let box = el.getBoundingClientRect();
+        let calcX = -(y - box.y - box.height / 2) / constrain;
+        let calcY = (x - box.x - box.width / 2) / constrain;
 
-    <script src="js/menu.js"></script>
+        return (
+          "perspective(100px) " +
+          "   rotateX(" +
+          calcX +
+          "deg) " +
+          "   rotateY(" +
+          calcY +
+          "deg) "
+        );
+      }
+
+      function transformElement(el, xyEl) {
+        el.style.transform = transforms.apply(null, xyEl);
+      }
+
+      mouseOverContainer.onmousemove = function (e) {
+        let xy = [e.clientX, e.clientY];
+        let position = xy.concat([ex1Layer]);
+
+        window.requestAnimationFrame(function () {
+          transformElement(ex1Layer, position);
+        });
+      };
+    </script>
   </body>
 </html>
