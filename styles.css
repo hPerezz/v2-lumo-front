@@ -14,9 +14,12 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  letter-spacing: 0px;
   text-decoration: none;
 }
-
+h2, h1, h3 {
+  letter-spacing: -1px;
+}
 .card {
   width: 400px;
   padding: 35px;
@@ -57,12 +60,14 @@ body {
 
 .card .title {
   font-size: 25px;
+  letter-spacing: -1px;
   text-decoration: none; /* Ensure no underline for links in the title */
 }
 
 .card .text {
   display: inline;
   font-size: 14px;
+  letter-spacing: 0px;
   text-decoration: none; /* Ensure no underline for links in the text */
 }
 

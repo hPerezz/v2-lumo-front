@@ -1,5 +1,6 @@
 @font-face {
   font-family: "Code-Pro-LC";
+
   src: url("fonts/Code-Pro-LC.ttf") format("truetype");
 }
 @font-face {
@@ -9,6 +10,7 @@
 
 * {
   margin: 0;
+  letter-spacing: -1px;
   padding: 0;
   box-sizing: border-box;
 }
@@ -32,6 +34,7 @@ a {
   padding-left: 7vw;
   display: flex;
   flex-direction: column;
+  letter-spacing: -5.5px;
   width: 60vw;
   background-color: #0c0d0e;
   background-image: url("img/gradient-login-page.png"); /* substitua pelo caminho da sua imagem */
@@ -55,11 +58,13 @@ a {
 
 .background-gradient .pretitle {
   margin-top: 25vh;
+  letter-spacing: -2px;
   font-size: 36px;
 }
 
 .background-gradient .title {
   margin-top: 1vh;
+  letter-spacing: -2px;
   font-size: 60px;
 }
 .login-form .cellphone-logo {
@@ -110,7 +115,8 @@ label {
 .login-title-container {
   justify-content: space-between;
   display: flex;
-  font-size: 30px;
+  margin-bottom: 40px;
+  font-size: 40px;
 }
 .login-title-container img {
   filter: invert(1);
@@ -202,7 +208,8 @@ button:hover {
     border: white 30px solid;
   }
   .login-title-container {
-    font-size: 20px;
+    font-size: 30px;
+    margin-bottom: 17px;
   }
   .help {
     color: white;
@@ -212,6 +219,7 @@ button:hover {
   }
   .background-gradient {
     display: none;
+
   }
 
   .login-form {

@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: "lumobots", submenuId: "sub-lumobots" },
         { id: "team", submenuId: "sub-team" },
         { id: "myaccount", submenuId: "sub-myaccount" },
+        { id: "management", submenuId: "sub-management" },
     ];
 
     function isMobileView() {
